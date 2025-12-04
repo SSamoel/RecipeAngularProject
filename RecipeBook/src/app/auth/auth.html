@@ -1,0 +1,65 @@
+<!-- <ng-template appPlaceholder></ng-template> -->
+<ng-template #dynamicComponent></ng-template>
+<div class="row mt-5 justify-content-center">
+  <div class="col-12 col-md-6 col-lg-4">
+     <div class="card shadow-sm p-4 rounded-4">
+      <h4 class="text-center mb-4">{{ isLoggedInMode ? 'Login' : 'Sign Up' }}</h4>
+    <!-- <div class="alret alert-danger" *ngIf="error">
+      <p>{{error}}</p>
+    </div> -->
+    <!-- <app-alert [message]="error" (close)="onHandleError()" *ngIf="error"></app-alert> -->
+    <div *ngIf="isLoading" class="text-center">
+      <app-loading-spinner></app-loading-spinner>
+    </div>
+    <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" *ngIf="!isLoading">
+      <div class="form-group mb-3">
+        <label
+         for="email"
+         class="form-label fw-semibold">
+         Email
+        </label>
+        <input
+         type="email"
+         id="email"
+         ngModel
+         name="email"
+         required
+         email
+         class="form-control form-control-sm rounded-3"
+         placeholder="Enter your email">
+      </div>
+      <div class="form-group mb-3">
+        <label
+         for="password"
+         class="form-label fw-semibold">
+         Password
+        </label>
+        <input
+         type="password"
+         id="password"
+         ngModel
+         name="password"
+         minlength="6"
+         class="form-control form-control-sm rounded-3"
+         placeholder="Enter your password">
+      </div>
+      <br>
+      <div
+       class="d-flex justify-content-between align-items-center mt-4">
+        <button
+         class="btn btn-primary px-4 rounded-3"
+         type="submit"
+         [disabled]="authForm.invalid">
+         {{isLoggedInMode ? 'login' : 'signup'}}
+        </button>
+        <button
+         class="btn btn-outline-primary px-3 rounded-3"
+         type="button"
+         (click)="onSwtichMode()">
+          Switch to {{isLoggedInMode ? 'signup' : 'login'}}
+        </button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
