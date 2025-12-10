@@ -1,0 +1,27 @@
+<div class="recipes-page">
+  <div class="container mt-4">
+    <h2 class="mb-4">All Recipes</h2>
+    <div class="row">
+      <div class="col-md-4 mb-4" *ngFor="let recipe of recipes">
+        <div class="card h-100 shadow-sm">
+          <img [src]="recipe.image" class="card-img" [alt]="recipe.name">
+          <div class="card-body d-flex flex-column">
+            <div class="rating mb-2">
+              {{ recipe.rating }} ★ | {{ recipe.reviewCount }} Reviews
+            </div>
+            <h5 class="card-title">{{ recipe.name }}</h5>
+            <p class="card-text">{{ recipe.cuisine }} | {{ recipe.difficulty }} | {{ recipe.servings }} servings</p>
+            <p class="card-text">Calories: {{ recipe.caloriesPerServing }}</p>
+            <a [routerLink]="['/recipes', recipe.id]" class="btn btn-primary mt-auto text-uppercase">View Recipe</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="loadMoreRecipes text-center mt-4">
+      <button *ngIf="recipes.length<total" class="btn" (click)="loadRecipes()">
+        <span *ngIf="!loading">Load More</span>
+        <span *ngIf="loading">Loading...</span>
+      </button>
+    </div>
+  </div>
+</div>

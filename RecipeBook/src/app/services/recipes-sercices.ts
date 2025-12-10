@@ -1,64 +1,77 @@
-import { EventEmitter, Injectable } from '@angular/core';
-import { Recipe } from '../recipes/recipe.model';
-import { Ingredintes } from '../shared/ingredintes.model';
-import { ShoppingListServices } from './shopping-list-services';
-import { Subject } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
+
+
+export interface Recipe {
+  id: number;
+  name: string;
+  ingredients: string[];
+  instructions: string[];
+  prepTimeMinutes: number;
+  cookTimeMinutes: number;
+  servings: number;
+  difficulty: string;
+  cuisine: string;
+  caloriesPerServing: number;
+  tags: string[];
+  userId: number;
+  image: string;
+  rating: number;
+  reviewCount: number;
+  mealType: string[];
+
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class RecipesSercices {
-  recipes: Recipe[] = [
-    // new Recipe('Test Recipe1', 'This is test 1 description for recipe', 'assets/images/recipe.jpg',[
-    //   new Ingredintes ("ing 1", 10),
-    //   new Ingredintes ("ing 2", 20),
-    // ]),
-    // new Recipe('Test Recipe2', 'This is test 2 description for recipe', 'assets/images/recipe.jpg',[
-    //   new Ingredintes ("ing 3", 30),
-    //   new Ingredintes ("ing 4", 40),
-    // ]),
-    // new Recipe('Test Recipe3', 'This is test 3 description for recipe', 'assets/images/recipe.jpg',[
-    //   new Ingredintes ("ing 5", 50),
-    //   new Ingredintes ("ing 6", 60),
-    // ])
-  ];
-  recipeSelected = new Subject<Recipe>();
-  recipeChanged = new Subject<Recipe[]>();
 
-  constructor(private shoppingListService: ShoppingListServices) { }
+  private apiUrl = `${environment.apiBaseUrl}recipes`;
 
+  constructor(private http: HttpClient) { }
 
-  getService() {
-    return this.recipes;
+  getRecipes(limit: number , skip:number){
+    return this.http.get<{ recipes: Recipe[], total:number }>(
+    `${this.apiUrl}?limit=${limit}&skip=${skip}`);
   }
 
-  addIngredientsToShoppingList(ingredints: Ingredintes[]) {
-    this.shoppingListService.addIngredients(ingredints);
+  getRecipeById(id: number): Observable<Recipe> {
+    return this.http.get<Recipe>(`${this.apiUrl}/${id}`);
   }
-
-  getRecipeById(id: number) {
-    return this.recipes[id];
-  }
-
-  addRecipe(recipe: Recipe) {
-    this.recipes.push(recipe);
-    this.recipeChanged.next(this.recipes);
-  }
-
-  updateRecipe(index: number, newRecipe: Recipe) {
-    this.recipes[index] = newRecipe;
-    this.recipeChanged.next(this.recipes);
-  }
-
-  deleteRecipe(index: number) {
-    this.recipes.splice(index, 1);
-    this.recipeChanged.next(this.recipes);
-  }
-  setRecipes(recipes: Recipe[]) {
-    this.recipes = recipes;
-      console.log('📦 Recipes set in service:', this.recipes);
-
-    this.recipeChanged.next(this.recipes.slice()); // 🔥 مهم عشان الكومبوننت تعرف بالتغيير
-  }
-
 }
+
+
+
+
+
+
+// addIngredientsToShoppingList(ingredints: Ingredintes[]) {
+//   this.shoppingListService.addIngredients(ingredints);
+// }
+
+
+// addRecipe(recipe: Recipe) {
+//   this.recipes.push(recipe);
+//   this.recipeChanged.next(this.recipes);
+// }
+
+// updateRecipe(index: number, newRecipe: Recipe) {
+//   this.recipes[index] = newRecipe;
+//   this.recipeChanged.next(this.recipes);
+// }
+
+// deleteRecipe(index: number) {
+//   this.recipes.splice(index, 1);
+//   this.recipeChanged.next(this.recipes);
+// }
+// setRecipes(recipes: Recipe[]) {
+//   this.recipes = recipes;
+//     console.log('📦 Recipes set in service:', this.recipes);
+
+//   this.recipeChanged.next(this.recipes.slice()); // 🔥 مهم عشان الكومبوننت تعرف بالتغيير
+// }
+
+
