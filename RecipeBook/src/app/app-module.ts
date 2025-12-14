@@ -4,11 +4,11 @@ import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
-import { AuthInterceptor } from './services/authentication.interceptor';
 import { Alert } from './alert/alert';
 import { placeholderDirective } from "./directives/placholder.directive";
 import { CoreModule } from './core/core-module';
 import { Home } from './home/home';
+import { authInterceptorService } from './services/auth-interceptor-service';
 
 @NgModule({
   declarations: [
@@ -18,22 +18,16 @@ import { Home } from './home/home';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     CoreModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule,
     placeholderDirective,
 
 ],
   providers: [
-    provideBrowserGlobalErrorListeners(),
-    provideClientHydration(withEventReplay()),
-    {
-      provide : HTTP_INTERCEPTORS,
-      useClass : AuthInterceptor,
-      multi : true
-    }
+    {provide:HTTP_INTERCEPTORS , useClass:authInterceptorService , multi:true}
   ],
   bootstrap: [App]
 })

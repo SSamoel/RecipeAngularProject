@@ -7,7 +7,7 @@ import { Authentication } from './services/authentication';
   standalone: false,
   styleUrl: './app.css'
 })
-export class App implements OnInit {
+export class App  {
 
   protected readonly title = signal('RecipeBook');
 
@@ -17,8 +17,5 @@ export class App implements OnInit {
 
   onNavigate(feature : string){
     this.loadedFeature = feature;
-  }
-    ngOnInit() {
-    this.authService.autoLogin();
   }
 }

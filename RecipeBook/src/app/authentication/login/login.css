@@ -1,0 +1,46 @@
+.login-page{
+  background: linear-gradient(120deg, #ff6a00, #ff8a00, #ffc837);
+  background-attachment: fixed;
+  padding: 50px 0;
+}
+
+.login-card{
+  min-height: 450px;
+  min-width: 400px;
+  border-radius: 14px;
+  background-color: #141414;
+  color: white;
+}
+.no-bg {
+  background-color: transparent !important;
+}
+
+.no-border {
+  border: none !important;
+  border-bottom: 2px solid #2C2C2C !important;
+  border-radius: 0 !important;
+}
+
+.no-border:focus {
+  box-shadow: none !important;
+  border-bottom-color: #01265d !important;
+}
+.custom-float .form-control {
+  width: 100%;
+  padding: 10px 5px;
+  color: white;
+  font-size: 1rem;
+}
+.custom-float label {
+  padding-left: 0;
+  color: white;
+}
+.custom-float .form-control:focus ~ label,
+.custom-float .form-control:not(:placeholder-shown) ~ label {
+  transform: translateY(-22px) scale(0.85);
+  color: white
+}
+.btn{
+  background-color: #F0821A;
+  color:white
+}

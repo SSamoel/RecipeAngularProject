@@ -5,14 +5,18 @@ import { Home } from './home/home';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: Home },  
+  { path: 'home', component: Home },
   {
     path: 'recipes',
     loadChildren: () =>
       import('./recipes/recipes-module').then(m => m.RecipesModule)
   },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: '**', redirectTo: '/home' }
+  {
+    path: 'auth',
+    loadChildren: () =>
+      import('./authentication/authentication-module').then(m => m.AuthenticationModule)
+  },
+  { path: '**', redirectTo: '/home' },
 
 ];
 
