@@ -9,8 +9,8 @@ import { Subscription } from 'rxjs';
   styleUrl: './header.css'
 })
 export class Header {
-  userSubscription!: Subscription;
-  isAuthenticated = false;
+  // userSubscription!: Subscription;
+  // isAuthenticated = false;
   searchText: string = '';
   isScrolled = false;
 

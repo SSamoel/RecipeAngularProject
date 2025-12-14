@@ -1,0 +1,6 @@
+.home{
+  min-height: 100vh;
+  background: linear-gradient(120deg, #ff6a00, #ff8a00, #ffc837);
+  background-attachment: fixed;
+  padding: 50px 0;
+}

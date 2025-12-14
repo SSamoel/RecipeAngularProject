@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Recipe, RecipesSercices } from '../../services/recipes-sercices';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-recipes-list',
@@ -33,7 +34,7 @@ export class RecipesList implements OnInit{
 
 
   searchRecipes(query: string) {
-    this.http.get(`https://dummyjson.com/recipes/search?q=${query}`)
+    this.http.get(`${environment.apiBaseUrl}recipes/search?q=${query}`)
       .subscribe((res: any) => {
         this.recipes = res.recipes;
       });
