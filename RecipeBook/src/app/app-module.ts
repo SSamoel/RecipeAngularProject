@@ -14,7 +14,7 @@ import { authInterceptorService } from './services/auth-interceptor-service';
   declarations: [
     App,
     Alert,
-    Home
+    Home,
   ],
   imports: [
     BrowserModule,

@@ -4,8 +4,14 @@ import { Home } from './home/home';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: Home },
+  {
+    path: 'dashboard',
+    loadChildren: () =>
+      import('./Dashboard/dashboard-module')
+      .then(m => m.DashboardModule)
+  },
   {
     path: 'recipes',
     loadChildren: () =>
