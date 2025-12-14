@@ -1,0 +1,14 @@
+.custom-card{
+  width: 900px;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+h2{
+  color: #FF9900;
+}
+
+.addBtn{
+  background-color: #F0821A;
+  color:white
+}

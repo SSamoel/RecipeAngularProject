@@ -12,17 +12,17 @@ export class Login {
   username: string = '';
   password: string = '';
 
-  constructor(private router : Router , private authService : Authentication){}
+  constructor(private router: Router, private authService: Authentication) { }
 
-  onSubmit(){
+  onSubmit() {
     this.authService.login({
-      username : this.username,
-      password : this.password
+      username: this.username,
+      password: this.password
     }).subscribe({
-      next: () =>{
-        this.router.navigate(['/home'])
+      next: () => {
+        this.router.navigate(['/dashboard/recipes']);
       }
     })
-
   }
 }
+

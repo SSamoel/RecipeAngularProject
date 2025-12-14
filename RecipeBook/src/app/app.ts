@@ -1,5 +1,6 @@
 import { Component, signal, OnInit } from '@angular/core';
-import { Authentication } from './services/authentication';
+import { NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -7,15 +8,15 @@ import { Authentication } from './services/authentication';
   standalone: false,
   styleUrl: './app.css'
 })
-export class App  {
+export class App implements OnInit {
+  showHeader: boolean | null = null;
 
-  protected readonly title = signal('RecipeBook');
-
-  loadedFeature : string ='recipe';
-
-   constructor(private authService: Authentication) {}
-
-  onNavigate(feature : string){
-    this.loadedFeature = feature;
+  constructor(private router: Router) { }
+  ngOnInit(): void {
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe((event: NavigationEnd) => {
+      this.showHeader = !event.urlAfterRedirects.startsWith('/dashboard');
+    });
   }
 }
