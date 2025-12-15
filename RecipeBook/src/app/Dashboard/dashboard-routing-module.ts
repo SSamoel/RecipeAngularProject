@@ -4,6 +4,7 @@ import { Dashboard } from './dashboard/dashboard';
 import { Recipes } from './dashboard/recipes/recipes';
 import { Users } from './dashboard/users/users';
 import { AddNewRecipe } from './dashboard/recipes/add-new-recipe/add-new-recipe';
+import { EditRecipe } from './dashboard/recipes/edit-recipe/edit-recipe';
 
 const routes: Routes = [
   {
@@ -15,7 +16,8 @@ const routes: Routes = [
       { path: '', redirectTo: 'home', pathMatch: 'full' }
     ]
   },
-  {path:'addNewRecipe' , component: AddNewRecipe}
+  {path:'addNewRecipe' , component: AddNewRecipe},
+  {path:'editRecipe/:id', component : EditRecipe}
   ];
 
 @NgModule({

@@ -1,0 +1,92 @@
+<div class="container my-3">
+  <div class="card shadow-lg  p-5 rounded-4 border-0 custom-card">
+    <h2 class="mb-4 text-center fw-bold">Edit Recipe</h2>
+    <form [formGroup]="editRecipeForm" (ngSubmit)="submitEditedForm()">
+      <div class="form-group row mb-3">
+        <label for="name" class="col-md-3 col-form-label">Recipe Name</label>
+        <div class="col-md-9">
+          <input type="text" formControlName="name" class="form-control" id="name">
+        </div>
+      </div>
+      <div class="form-group mb-4 p-3 bg-light rounded" formArrayName="ingredients">
+        <label for="ingredients" class="form-label fw-bold">Ingredients</label>
+        <div *ngFor="let ingredient of ingredients.controls; let i = index" class="d-flex mb-2">
+          <input [formControlName]="i" class="form-control me-2" placeholder="Ingredient {{i+1}}">
+          <button type="button" class="btn btn-sm btn-danger" (click)="removeIngredient(i)">Remove</button>
+        </div>
+        <button type="button" class="btn addBtn btn-sm mt-2" (click)="addIngredient()">Add Ingredient</button>
+      </div>
+      <div class="form-group mb-4 p-3 bg-light rounded" formArrayName="instructions">
+        <label for="instructions" class="form-label fw-bold">Instructions</label>
+        <div *ngFor="let instruction of instructions.controls; let i = index" class="d-flex mb-2">
+          <input [formControlName]="i" class="form-control me-2" placeholder="Instruction {{i+1}}">
+          <button type="button" (click)="removeInstruction(i)" class="btn btn-sm btn-danger">Remove</button>
+        </div>
+        <button type="button" (click)="addInstruction()" class="btn addBtn btn-sm  mt-2">Add Instruction</button>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-4 mb-2">
+          <label class="form-label">Preparation Time (min)</label>
+          <input type="number" formControlName="prepTimeMinutes" class="form-control">
+        </div>
+        <div class="col-md-4 mb-2">
+          <label class="form-label">Cooking Time (min)</label>
+          <input type="number" formControlName="cookTimeMinutes" class="form-control">
+        </div>
+        <div class="col-md-4 mb-2">
+          <label class="form-label">Servings</label>
+          <input type="number" formControlName="servings" class="form-control">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-6 mb-2">
+          <label class="form-label">Difficulty</label>
+          <input type="text" formControlName="difficulty" class="form-control">
+        </div>
+        <div class="col-md-6 mb-2">
+          <label class="form-label">Cuisine</label>
+          <input type="text" formControlName="cuisine" class="form-control">
+        </div>
+      </div>
+      <div class="form-group row mb-3">
+        <label for="caloriesPerServing" class="col-md-3 col-form-label">Calories Per Serving</label>
+        <div class="col-md-9">
+          <input type="number" formControlName="caloriesPerServing" class="form-control" id="caloriesPerServing">
+        </div>
+      </div>
+      <div class="form-group mb-4 p-3 bg-light rounded" formArrayName="tags">
+        <label class="form-label fw-bold">Tags</label>
+        <div *ngFor="let tag of tags.controls; let i = index" class="d-flex mb-2">
+          <input [formControlName]="i" class="form-control me-2" placeholder="tags {{i+1}}">
+          <button type="button" (click)="removeTag(i)" class="btn btn-sm btn-danger">Remove</button>
+        </div>
+        <button type="button" (click)="addTag()" class="btn btn-sm addBtn mt-2">Add Tag</button>
+      </div>
+      <div class="form-group row mb-3">
+        <label for="image" class="col-md-3 col-form-label">Recipe Image URL</label>
+        <div class="col-md-9">
+          <input formControlName="image" class="form-control" placeholder="Enter image URL">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-6 mb-2">
+          <label class="form-label">Rating</label>
+          <input type="number" formControlName="rating" class="form-control">
+        </div>
+        <div class="col-md-6 mb-2">
+          <label class="form-label">Review Count</label>
+          <input type="number" formControlName="reviewCount" class="form-control">
+        </div>
+      </div>
+      <div class="form-group row mb-4">
+        <label for="mealType" class="col-md-3 col-form-label">Meal Type</label>
+        <div class="col-md-9">
+          <select formControlName="mealType" class="form-control">
+            <option *ngFor="let type of mealTypes" [value]="type">{{ type }}</option>
+          </select>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
