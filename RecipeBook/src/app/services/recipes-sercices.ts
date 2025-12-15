@@ -45,6 +45,10 @@ export class RecipesSercices {
   updateRecipe(id:number, data:any){
     return this.http.put(`${this.apiUrl}/${id}`,data);
   }
+
+  deleteRecipe(id:number){
+    return this.http.delete(`${this.apiUrl}/${id}`);
+  }
 }
 
 

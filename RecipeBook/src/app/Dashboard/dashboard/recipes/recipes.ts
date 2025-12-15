@@ -28,6 +28,16 @@ export class Recipes {
     this.router.navigate(['/dashboard/editRecipe',id])
   }
 
-  deleteRecipe(){}
+  deleteRecipe(id : number){
+    this.recipeService.deleteRecipe(id).subscribe({
+      next: res => {
+        console.log('Deleted:', res);
+        this.recipes = this.recipes.filter(r => r.id !== id);
+      },
+      error: err => {
+        console.error('Delete failed', err);
+      }
+    })
+  }
 
 }
