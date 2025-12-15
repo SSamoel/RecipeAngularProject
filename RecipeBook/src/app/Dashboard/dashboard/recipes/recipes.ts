@@ -35,7 +35,7 @@ export class Recipes {
         this.recipes = this.recipes.filter(r => r.id !== id);
       },
       error: err => {
-        console.error('Delete failed', err);
+        console.error('Delete Recipe failed ', err);
       }
     })
   }
