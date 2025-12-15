@@ -41,37 +41,14 @@ export class RecipesSercices {
   getRecipeById(id: number): Observable<Recipe> {
     return this.http.get<Recipe>(`${this.apiUrl}/${id}`);
   }
+
+  updateRecipe(id:number, data:any){
+    return this.http.put(`${this.apiUrl}/${id}`,data);
+  }
 }
 
 
 
 
-
-
-// addIngredientsToShoppingList(ingredints: Ingredintes[]) {
-//   this.shoppingListService.addIngredients(ingredints);
-// }
-
-
-// addRecipe(recipe: Recipe) {
-//   this.recipes.push(recipe);
-//   this.recipeChanged.next(this.recipes);
-// }
-
-// updateRecipe(index: number, newRecipe: Recipe) {
-//   this.recipes[index] = newRecipe;
-//   this.recipeChanged.next(this.recipes);
-// }
-
-// deleteRecipe(index: number) {
-//   this.recipes.splice(index, 1);
-//   this.recipeChanged.next(this.recipes);
-// }
-// setRecipes(recipes: Recipe[]) {
-//   this.recipes = recipes;
-//     console.log('📦 Recipes set in service:', this.recipes);
-
-//   this.recipeChanged.next(this.recipes.slice()); // 🔥 مهم عشان الكومبوننت تعرف بالتغيير
-// }
 
 

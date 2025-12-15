@@ -62,8 +62,6 @@ export class AddNewRecipe implements OnInit {
     this.instructions.push(new FormControl('',Validators.required))
   }
 
-/*************  ✨ Windsurf Command ⭐  *************/
-/*******  dca5e114-cfd5-408b-b01d-3df5a913effe  *******/
   removeInstruction(index:number){
     this.instructions.removeAt(index);
   }
