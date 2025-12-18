@@ -1,0 +1,26 @@
+<div class="container my-3">
+  <div class="card shadow-lg  p-5 rounded-4 border-0 custom-card">
+    <h2 class="mb-4 text-center fw-bold">Add New Recipe</h2>
+    <form [formGroup]="userForm" (ngSubmit)="userFormSubmit()">
+      <div class="form-group row mb-3">
+        <label for="name" class="col-md-3 col-form-label">First Name</label>
+        <div class="col-md-9">
+          <input type="text" formControlName="firstName" class="form-control" id="firstName">
+        </div>
+      </div>
+      <div class="form-group row mb-3">
+        <label for="name" class="col-md-3 col-form-label">Last Name</label>
+        <div class="col-md-9">
+          <input type="text" formControlName="lastName" class="form-control" id="lastName">
+        </div>
+      </div>
+      <div class="form-group row mb-3">
+        <label for="name" class="col-md-3 col-form-label">Age</label>
+        <div class="col-md-9">
+          <input type="number" formControlName="age" class="form-control" id="age">
+        </div>
+      </div>
+      <button class="btn btn-primary">Add</button>
+    </form>
+  </div>
+</div>
