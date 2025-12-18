@@ -9,6 +9,8 @@ import { Recipes } from './dashboard/recipes/recipes';
 import { Users } from './dashboard/users/users';
 import { AddNewRecipe } from './dashboard/recipes/add-new-recipe/add-new-recipe';
 import { EditRecipe } from './dashboard/recipes/edit-recipe/edit-recipe';
+import { AddUser } from './dashboard/users/add-user/add-user';
+import { EditUser } from './dashboard/users/edit-user/edit-user';
 
 
 @NgModule({
@@ -19,6 +21,8 @@ import { EditRecipe } from './dashboard/recipes/edit-recipe/edit-recipe';
     Users,
     AddNewRecipe,
     EditRecipe,
+    AddUser,
+    EditUser
   ],
   imports: [
     CommonModule,
