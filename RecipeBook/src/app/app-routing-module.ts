@@ -13,17 +13,6 @@ const routes: Routes = [
         .then(m => m.DashboardModule)
   },
   {
-    path: 'recipesdashboard',
-    loadChildren: () =>
-      import('./recipes-dashboard/recipes-dashboard-module')
-        .then(m => m.RecipesDashboardModule)
-  },
-  {
-    path: 'users',
-    loadChildren: () =>
-      import('./users/users-module').then(m => m.UsersModule)
-  },
-  {
     path: 'recipes',
     loadChildren: () =>
       import('./recipes/recipes-module').then(m => m.RecipesModule)

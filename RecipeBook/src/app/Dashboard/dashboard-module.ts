@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Dashboard } from './dashboard-layout/dashboard';
 import { DashboardRoutingModule } from './dashboard-routing-module';
 import { SharedModule } from '../shared/shared-module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import { SharedModule } from '../shared/shared-module';
   imports: [
     CommonModule,
     SharedModule,
+    ReactiveFormsModule,
     DashboardRoutingModule,
 
   ]

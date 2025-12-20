@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { RecipesList } from './recipes-list/recipes-list';
+import { RecipesList } from './components/recipes-list/recipes-list';
 import { RecipeEdit } from './recipe-edit/recipe-edit';
-import { RecipeDetails } from './recipe-details/recipe-details';
+import { RecipeDetails } from './components/recipe-details/recipe-details';
 
 const routes: Routes = [
   { path: '', component: RecipesList },
