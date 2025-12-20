@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AuthenticationRoutingModule } from './authentication-routing-module';
-import { Login } from './login/login';
+import { Login } from './components/login/login';
 import { FormsModule } from '@angular/forms';
 
 
