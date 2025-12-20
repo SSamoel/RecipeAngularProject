@@ -20,7 +20,7 @@ export class Login {
       password: this.password
     }).subscribe({
       next: () => {
-        this.router.navigate(['/dashboard/recipes']);
+        this.router.navigate(['/recipesdashboard']);
       }
     })
   }

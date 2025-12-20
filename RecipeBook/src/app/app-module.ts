@@ -5,10 +5,9 @@ import { App } from './app';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { Alert } from './alert/alert';
-import { placeholderDirective } from "./directives/placholder.directive";
 import { CoreModule } from './core/core-module';
 import { Home } from './home/home';
-import { authInterceptorService } from './services/auth-interceptor-service';
+import { authInterceptorService } from './core/interceptors/auth-interceptor-service';
 
 @NgModule({
   declarations: [
@@ -23,7 +22,6 @@ import { authInterceptorService } from './services/auth-interceptor-service';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    placeholderDirective,
 
 ],
   providers: [

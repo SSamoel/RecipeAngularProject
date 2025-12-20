@@ -1,0 +1,43 @@
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { Recipe, RecipesSercices } from '../../../services/recipes-sercices';
+
+@Component({
+  selector: 'app-recipes-dashboard-list',
+  standalone: false,
+  templateUrl: './recipes-dashboard-list.html',
+  styleUrl: './recipes-dashboard-list.css'
+})
+export class RecipesDashboardList {
+ recipes: Recipe[] = [];
+
+  constructor(private recipeService : RecipesSercices , private router : Router){}
+
+  ngOnInit() {
+    this.getRecipces();
+  }
+
+  getRecipces(){
+    this.recipeService.getRecipes(0,0).subscribe(res=>{
+      this.recipes = res.recipes;
+    });
+  }
+
+  editRecipe(id : number){
+    this.router.navigate(['/dashboard/editRecipe',id])
+  }
+
+  deleteRecipe(id : number){
+    this.recipeService.deleteRecipe(id).subscribe({
+      next: res => {
+        console.log('Deleted:', res);
+        this.recipes = this.recipes.filter(r => r.id !== id);
+      },
+      error: err => {
+        console.error('Delete Recipe failed ', err);
+      }
+    })
+  }
+}
+
+
