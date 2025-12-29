@@ -1,0 +1,10 @@
+.blog-card {
+  height: 220px; /* كل الكروت نفس الارتفاع */
+}
+
+.blog-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* أهم سطر */
+  border-radius: 6px;
+}

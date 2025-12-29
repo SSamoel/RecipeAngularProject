@@ -8,12 +8,14 @@ import { Alert } from './alert/alert';
 import { CoreModule } from './core/core-module';
 import { Home } from './home/home';
 import { authInterceptorService } from './core/interceptors/auth-interceptor-service';
+import { Blogs } from './blogs/blogs';
 
 @NgModule({
   declarations: [
     App,
     Alert,
     Home,
+    Blogs,
   ],
   imports: [
     BrowserModule,
