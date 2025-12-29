@@ -1,5 +1,228 @@
 <div class="home">
   <div class="container-fluid">
-
-  </div>
-</div>
+    <div class="img-section d-flex justify-content-center align-items-center">
+      <div class="paragraph">
+        <p>Recipe - Your Ultimate Recipe Collection</p>
+      </div>
+    </div>
+    <div class="about d-flex justify-content-center align-items-center pt-5">
+      <p class="text-center">
+        <strong>Welcome to Recipe, your go-to destination for a wide range of mouth-watering recipes.</strong>
+        <br>
+        Whether you're a home cook, a food enthusiast, or a professional chef, discover and create culinary delights
+        with our detailed recipe listings and cooking instructions.
+      </p>
+    </div>
+    <div class="section-divider"></div>
+    <div class="filters-section">
+      <div class="container">
+        <div class="row justify-content-start">
+          <div class="col-auto">
+            <div class="dropdown">
+              <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                {{ selectedTag || 'Recipe Tag' }}
+              </button>
+              <ul class="dropdown-menu tags-dropdown">
+                <li *ngFor="let tag of tags">
+                  <a class="dropdown-item" (click)="onTagChange(tag)">
+                    {{ tag }}
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-auto">
+            <div class="dropdown">
+              <button class="btn recipe-dropdown-btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                {{ selectedMealType || 'Recipe Meal Type' }}
+              </button>
+              <ul class="dropdown-menu tags-dropdown">
+                <li *ngFor="let mealType of mealTypes">
+                  <a class="dropdown-item" (click)="onMealTypeChange(mealType)">
+                    {{ mealType }}
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row g-4" *ngIf="selectedTag || selectedMealType">
+      <div class="col-md-4" *ngFor="let recipe of filteredRecipes">
+        <div class="card h-100">
+          <img [src]="recipe.image" class="card-img-top">
+          <div class="card-body">
+            <div class="rating mb-2">
+              {{ recipe.rating }} ★ | {{ recipe.reviewCount }} Reviews
+            </div>
+            <h5>{{ recipe.name }}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row g-4" *ngIf="!selectedTag && !selectedMealType">
+      <div class="col-md-4" *ngFor="let recipe of recipes">
+        <div class="card h-100">
+          <img [src]="recipe.image" class="card-img-top">
+          <div class="card-body">
+            <div class="rating mb-2">
+              {{ recipe.rating }} ★ | {{ recipe.reviewCount }} Reviews
+            </div>
+            <h5>{{ recipe.name }}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section-divider"></div>
+    <div class="blogs">
+      <div class="row">
+        <h1 class="text-center pb-5">Blogs</h1>
+        <div class="col-9">
+          <div class="card border-0 border-bottom" *ngIf="MainBlog">
+            <img [src]="MainBlog.image" class="card-img-top w-100">
+            <div class="card-body pt-3 text-center">
+              <h4>{{MainBlog.title}}</h4>
+              <span>{{MainBlog.date}} / {{MainBlog.author}}</span>
+              <p class="pt-4">{{MainBlog.content}}</p>
+              <button class="btn text-uppercase" type="button">Continue Reading</button>
+            </div>
+          </div>
+          <br>
+          <div class="card mb-3 border-0 border-bottom">
+            <div class="row g-0" *ngFor="let blog of blogs">
+              <div class="col-md-4">
+                <img [src]="blog.image" class="img-fluid">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5>{{blog.title}}</h5>
+                  <span>{{blog.date}} / {{blog.author}}</span>
+                  <p class="card-text pt-4">{{blog.content}}</p>
+                  <button class="btn text-uppercase" type="button">Continue Reading</button>
+                </div>
+              </div>
+            </div>
+            <div class="mt-4">
+              <button class="btn text-uppercase" type="button" routerLink="/blogs">view all blogs</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="card text-center">
+            <div class="about-me-wrapper py-4">
+              <h5 class="card-title text-uppercase">About Me</h5>
+            </div>
+            <img src="/assets/images/user1.jpg" class="card-img-top">
+            <div class="card-body">
+              <h2>Lucid Themes</h2>
+              <p>Sed pellentesque nibh enim, quis euismod enim lacinia nec. Phasellus quam diam, semper in erat eu.
+                Consectetur adipiscing elit. Sed pellentesque nibh enim, quis euismod enim lacinia nec.</p>
+              <div class="social-icons mt-3">
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-twitter-x"></i></a>
+                <a href="#"><i class="bi bi-google"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="card mt-5">
+            <div class="instgram-wrapper py-4 text-center">
+              <h5 class="card-title text-uppercase">Instgram</h5>
+            </div>
+            <div class="instagram-wrapper">
+              <div class="follow-instgram">
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                Follow us on Instagram
+              </div>
+              <div class="instagram-images">
+                <div class="row g-2 m-0">
+                  <div class="col-4 p-1" *ngFor="let img of instagramImages">
+                    <img [src]="img" class="instagram-img">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- latest posts card -->
+          <div class="card mt-5">
+            <div class="latest-posts-wrapper py-4 text-center">
+              <h5 class="card-title text-uppercase">latest posts</h5>
+            </div>
+            <div class="card border-0 px-4 latest-post-item">
+              <div class="row post-row">
+                <div class="col-md-4">
+                  <img src="/assets/images/blog1.jpg" class="img-fluid h-100 rounded-start">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5>Chocolate Heaven</h5>
+                    <span>December 20,2025</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card border-0 px-4 latest-post-item">
+              <div class="row post-row">
+                <div class="col-md-4">
+                  <img src="/assets/images/img2.jpg" class="img-fluid h-100 rounded-start">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5>Healthy Breakfast Meals</h5>
+                    <span>December 20,2025</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card border-0 px-4 latest-post-item">
+              <div class="row post-row">
+                <div class="col-md-4">
+                  <img src="/assets/images/img3.jpg" class="img-fluid h-100 rounded-start">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5>Natural Fruit Yoghurts</h5>
+                    <span>December 20,2025</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- follow me card -->
+          <div class="card mt-5">
+            <div class="follow-me-wrapper py-4 text-center">
+              <h5 class="card-title text-uppercase">follow me</h5>
+            </div>
+            <div class="card-body social-icons">
+              <a href="#"><i class="bi bi-facebook"></i></a>
+              <a href="#"><i class="bi bi-instagram"></i></a>
+              <a href="#"><i class="bi bi-twitter-x"></i></a>
+              <a href="#"><i class="bi bi-google"></i></a>
+            </div>
+          </div>
+          <!-- banner card -->
+          <div class="card mt-5">
+            <div class="banner-wrapper py-4 text-center">
+              <h5 class="card-title text-uppercase">banner</h5>
+            </div>
+            <div class="card-body p-2">
+              <img src="/assets/images/img2.jpg" class="img-fluid w-100 rounded">
+            </div>
+          </div>
+          <!--tags card-->
+          <div></div>
+        </div>
+        <div class="about d-flex justify-content-center align-items-center pt-5">
+          <p class="text-center">
+            <strong>Join our community of food lovers and start your culinary journey today!
+            </strong>
+            <br>
+            Follow us on social media for daily recipe inspiration.
+          </p>
+        </div>
+        <div class="footer d-flex justify-content-center align-items-center pt-5 ">
+          <p>© 2025 Recipe. All rights reserved. For inquiries, contact us at <a>info@recipe.com</a></p>
+        </div>
+      </div>
+    </div>

@@ -1,6 +1,173 @@
-.home{
-  min-height: 100vh;
-  background: linear-gradient(120deg, #ff6a00, #ff8a00, #ffc837);
-  background-attachment: fixed;
-  padding: 50px 0;
+.container-fluid {
+  padding: 2rem;
+}
+
+.img-section {
+  height: 100vh;
+  background-image: url('/assets/images/Recipes cover.jpg.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.paragraph {
+  background-color: #ff9900;
+  padding: 20px 40px;
+  width: 60%;
+}
+
+.paragraph p {
+  margin: 0;
+  color: #fff;
+  font-size: 30px;
+  font-weight: semi-bold;
+  text-align: center;
+}
+
+.about p {
+  max-width: 800px;
+  line-height: 1.6;
+  font-size: 18px;
+}
+
+.section-divider {
+  width: 200px;
+  height: 3px;
+  background-color: #ff9900;
+  margin: 50px auto;
+}
+
+.filters-section {
+  max-width: 1140px;
+  margin: 20px auto;
+}
+
+.btn {
+  background-color: #fff;
+  color: #ff9900;
+  border: 2px solid rgba(255, 153, 0, 1);
+  padding: 10px 20px;
+  font-weight: 600;
+  min-width: 150px;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.recipe-dropdown-btn:hover,
+.recipe-dropdown-btn:focus {
+  background-color: #ff9900;
+  color: #fff;
+  box-shadow: 0 6px 15px rgba(255, 153, 0, 0.3);
+}
+
+.tags-dropdown {
+  max-height: 250px;
+  overflow-y: auto;
+}
+/* Blogs Section */
+
+h1 {
+  color: #ff9900;
+  font-weight: bold;
+}
+
+.card-title{
+  color: #ff9900;
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: 2px solid #ff9900;
+  display: inline-block;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+/* About Me Card */
+.card .about-me-wrapper {
+  text-align: center;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.social-icons a {
+  text-decoration: none;
+}
+
+.social-icons i {
+  font-size: 18px;
+  color: #666;
+  width: 38px;
+  height: 38px;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+/* Instgram Card */
+
+.instagram-wrapper {
+  position: relative;
+}
+
+.instagram-images {
+  position: relative;
+}
+
+.instagram-img {
+  width: 100%;
+  height: 90px;
+  object-fit: cover;
+}
+
+.follow-instgram {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 10px 20px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+  z-index: 3;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.follow-instgram a {
+  color: #ff9900;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.card img {
+  height: 100%;
+  object-fit: cover;
+}
+
+/* latest posts card */
+
+.latest-post-item {
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+.latest-post-item .post-row {
+  border-bottom: 1px solid #ececec !important;
+  padding-bottom: 15px;
+}
+
+.latest-post-item:last-child .post-row {
+  border-bottom: none !important;
+  padding-bottom: 0;
 }
