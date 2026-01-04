@@ -1,10 +1,57 @@
-.blog-card {
-  height: 220px; /* كل الكروت نفس الارتفاع */
+.blogs-page {
+  min-height: 100vh;
+  background: linear-gradient(120deg, #ff6a00, #ff8a00, #ffc837);
+  background-attachment: fixed;
+  padding: 50px 0;
+}
+
+h2 {
+  color: #ffffff;
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+h2::after {
+  content: '';
+  display: block;
+  width: 70px;
+  height: 5px;
+  background: #fff;
+  border-radius: 5px;
+  margin-top: 8px;
+}
+
+.card {
+  border-radius: 18px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
 }
 
 .blog-img {
   width: 100%;
-  height: 100%;
-  object-fit: cover; /* أهم سطر */
-  border-radius: 6px;
+  height: 300px; 
+  object-fit: cover;
+}
+
+.btn-blog {
+  background: linear-gradient(90deg, #ff6a00, #ffa200);
+  width: 100%;
+  color: white;
+  border: none;
+  font-weight: 600;
+  border-radius: 20px;
+  padding: 10px 0;
+}
+
+.btn:hover {
+  opacity: .9;
 }

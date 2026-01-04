@@ -1,20 +1,14 @@
-<div class="container">
-  <div class=row>
-    <div class="col-12" *ngFor="let blog of blogs">
-      <div class="card blog-card mb-4 border-0 border-bottom h-100">
-        <div class="row g-3 h-100">
-          <div class="col-4 d-flex align-items-stretch">
-            <div class="card-img">
-              <img class="blog-img" [src]="blog.image">
-            </div>
-          </div>
-          <div class="col-8 d-flex">
-            <div class="card-body d-flex flex-column">
-              <h5>{{blog.title}}</h5>
-              <span>{{blog.date}} / {{blog.author}}</span>
-              <p class="card-text pt-3">{{blog.content}}</p>
-              <button class="btn text-uppercase mt-auto align-self-start" type="button">Continue Reading</button>
-            </div>
+<div class="blogs-page">
+  <div class="container mt-4">
+    <h2 class="mb-4">All Blogs</h2>
+    <div class="row g-4">
+      <div class="col-12 col-md-6 col-lg-4 mb-4" *ngFor="let blog of blogs">
+        <div class="card h-100 border-0 shadow-sm">
+          <img [src]="blog.image" class="card-img-top blog-img" [alt]="blog.title">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">{{ blog.title }}</h5>
+            <p class="card-text">{{ blog.content }}</p>
+            <a [routerLink]="['/blogs', blog.id]" class="btn mt-auto text-uppercase btn-blog">View Blog</a>
           </div>
         </div>
       </div>

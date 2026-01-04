@@ -10,18 +10,24 @@ import { User } from '../../../../core/models/user.model';
   styleUrl: './users-list.css'
 })
 export class UsersList {
-  users: User[] = []
+  users: User[] = [];
+  limit = 5;
+  skip = 0;
+  total = 0;
 
   constructor(private userServices: UsersServices, private router: Router) { }
 
   ngOnInit() {
-    this.userServices.getAllUsers().subscribe({
-      next: (res) => this.users = res.users,
-      error: (err) => console.error(err)
-    })
+    this.loadUsers();
   }
 
-
+  loadUsers() {
+    this.userServices.getAllUsers(this.limit, this.skip).subscribe((data) => {
+      this.users = [...this.users, ...data.users];
+      this.total = data.total;
+      this.skip += this.limit;
+    })
+  }
   editUser(id: number) {
     this.router.navigate(['/dashboard/users/edit', id]);
   }

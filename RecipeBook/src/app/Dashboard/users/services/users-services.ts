@@ -13,8 +13,8 @@ export class UsersServices {
 
   constructor(private http : HttpClient){}
 
-  getAllUsers():Observable<{users : User[]}>{
-    return this.http.get<{users : User[]}>(`${environment.apiBaseUrl}users`);
+  getAllUsers(limit:number , skip:number):Observable<{users : User[], total:number}>{
+    return this.http.get<{users : User[] , total:number}>(`${environment.apiBaseUrl}?limit=${limit}&skip=${skip}`);
   }
 
   getSingleUser(id : number):Observable<User>{
