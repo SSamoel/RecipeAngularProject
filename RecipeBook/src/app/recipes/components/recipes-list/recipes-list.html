@@ -18,7 +18,7 @@
       </div>
     </div>
     <div class="loadMoreRecipes text-center mt-4">
-      <button *ngIf="recipes.length<total" class="btn" (click)="loadRecipes()">
+      <button *ngIf="recipes.length<total" class="btn text-uppercase" (click)="loadRecipes()">
         <span *ngIf="!loading">Load More</span>
         <span *ngIf="loading">Loading...</span>
       </button>
