@@ -45,7 +45,7 @@ export class Home implements OnInit {
     });
 
     this.blogService.getBlogs().subscribe((data)=>{
-      this.blogs = data.blogs.slice(0,4);
+      this.blogs = data.blogs.slice(0,5);
     })
 
   }

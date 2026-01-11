@@ -1,0 +1,17 @@
+h2{
+  color: #FF9E0E;
+}
+
+span{
+  padding: 0 10px;
+  color: #e0e0e6ff;
+}
+
+strong{
+  color: #69717E;
+  font-weight: bold !important;
+}
+
+p{
+  font-weight: bold;
+}

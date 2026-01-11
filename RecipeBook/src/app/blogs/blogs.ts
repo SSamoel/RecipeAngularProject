@@ -7,16 +7,32 @@ import { Blogservices } from '../shared/services/blogservices';
   templateUrl: './blogs.html',
   styleUrl: './blogs.css'
 })
-export class Blogs implements OnInit{
+export class Blogs implements OnInit {
 
+  allBlogs: any[] = [];
   blogs: any[] = [];
 
-  constructor(private blogService : Blogservices){}
+  visibleCount = 6;
+  step = 3;
+  loading = false;
+
+  constructor(private blogService: Blogservices) { }
 
   ngOnInit(): void {
-    this.blogService.getBlogs().subscribe((data)=>{
-      this.blogs = data.blogs
-    })
+    this.loading = true;
+    this.blogService.getBlogs().subscribe((data) => {
+      this.allBlogs = data.blogs;
+      this.blogs = this.allBlogs.slice(0, this.visibleCount);
+      this.loading = false;
+    });
   }
 
+  loadMore() {
+    this.loading = true;
+    setTimeout(() => {
+      this.visibleCount += this.step;
+      this.blogs = this.allBlogs.slice(0, this.visibleCount);
+      this.loading = false;
+    }, 500)
+  }
 }

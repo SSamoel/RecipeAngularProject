@@ -9,6 +9,7 @@ import { CoreModule } from './core/core-module';
 import { Home } from './home/home';
 import { authInterceptorService } from './core/interceptors/auth-interceptor-service';
 import { Blogs } from './blogs/blogs';
+import { Contact } from './contact/contact';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { Blogs } from './blogs/blogs';
     Alert,
     Home,
     Blogs,
+    Contact,
   ],
   imports: [
     BrowserModule,
