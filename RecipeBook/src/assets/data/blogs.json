@@ -2,75 +2,83 @@
   "blogs": [
     {
       "id": 1,
-      "title": "Chocolate Heaven",
+      "title": "Meat casserole",
       "author": "Luicd Themes",
       "date": "December 1,2025",
-      "image": "assets/images/blog1.jpg",
-      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed pellentesque nibh enim, quis euismod enim lacinia nec. Phasellus quam diam, semper in erat eu, efficitur molestie purus. Sed a elementum mi. Sed interdum mattis risus, sit amet eleifend ligula luctus ut. Sed ullamcorper lorem aliquam, tincidunt lorem et, ultrices est. Suspendisse eleifend dui odio, id volutpat quam iaculis eu. Nunc sit amet scelerisque mauris. Phasellus volutpat mauris ac sem tincidunt, in fringilla arcu ultrices. Phasellus scelerisque eros vel pulvinar gravida. Aenean suscipit felis orci, sed egestas libero dignissim at. Sed commodo malesuada ligula, nec vehicula risus fermentum sed. Integer pretium…"
+      "image": "assets/images/mainblog.jpg",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed pellentesque nibh enim, quis euismod enim lacinia nec. Phasellus quam diam, semper in erat eu, efficitur molestie purus. Sed a elementum mi. Sed interdum mattis risus, sit amet eleifend ligula luctus ut. Sed ullamcorper lorem aliquam, tincidunt lorem et, ultrices est. Suspendisse eleifend dui odio, id volutpat quam iaculis eu…"
     },
     {
       "id": 2,
-      "title": "Healthy Breakfast Meals",
+      "title": "Creamy Cottage Cheese Scrambled Eggs",
       "author": "Luicd Themes",
-      "date": "December 20,2025",
-      "image": "assets/images/img1.jpg",
-      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed pellentesque nibh enim, quis euismod enim lacinia nec. Phasellus quam diam, semper in erat eu, efficitur molestie purus. Sed a elementum mi. Sed interdum mattis risus, sit amet eleifend ligula luctus ut. Sed ullamcorper lorem aliquam, tincidunt lorem et, ultrices est. Suspendisse eleifend dui odio, id volutpat quam iaculis eu. Nunc sit amet scelerisque mauris. Phasellus volutpat mauris ac sem tincidunt, in fringilla arcu ultrices. Phasellus scelerisque eros vel pulvinar gravida. Aenean suscipit felis orci, sed egestas libero dignissim at. Sed commodo malesuada ligula, nec vehicula risus fermentum sed. Integer pretium…"
+      "date": "December 1,2025",
+      "image": "assets/images/blog1.jpg",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed pellentesque nibh enim, quis euismod enim lacinia nec. Phasellus quam diam, semper in erat eu, efficitur molestie purus. Sed a elementum mi. Sed interdum mattis risus, sit amet eleifend ligula luctus ut. Sed ullamcorper lorem aliquam, tincidunt lorem et, ultrices est. Suspendisse eleifend dui odio, id volutpat quam iaculis eu…"
     },
     {
       "id": 3,
-      "title": "Natural Fruit Yoghurts",
+      "title": "Meatballs with vegetables",
       "author": "Luicd Themes",
-      "date": "December 25,2025",
-      "image": "assets/images/img3.jpg",
-      "content":"Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed pellentesque nibh enim, quis euismod enim lacinia nec. Phasellus quam diam, semper in erat eu, efficitur molestie purus. Sed a elementum mi. Sed interdum mattis risus, sit amet eleifend ligula luctus ut. Sed ullamcorper lorem aliquam, tincidunt lorem et, ultrices est. Suspendisse eleifend dui odio, id volutpat quam iaculis eu. Nunc sit amet scelerisque mauris. Phasellus volutpat mauris ac sem tincidunt, in fringilla arcu ultrices. Phasellus scelerisque eros vel pulvinar gravida. Aenean suscipit felis orci, sed egestas libero dignissim at. Sed commodo malesuada ligula, nec vehicula risus fermentum sed. Integer pretium…"
+      "date": "December 20,2025",
+      "image": "assets/images/blog2.jpg",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed pellentesque nibh enim, quis euismod enim lacinia nec. Phasellus quam diam, semper in erat eu, efficitur molestie purus. Sed a elementum mi. Sed interdum mattis risus, sit amet eleifend ligula luctus ut. Sed ullamcorper lorem aliquam, tincidunt lorem et, ultrices est. Suspendisse eleifend dui odio, id volutpat quam iaculis eu…"
     },
     {
       "id": 4,
-      "title": "Cupcakes and Marshmallows",
+      "title": "Beef Enchiladas",
       "author": "Luicd Themes",
-      "date": "December 20,2025",
-      "image": "assets/images/img4.jpg",
-      "content":"Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed pellentesque nibh enim, quis euismod enim lacinia nec. Phasellus quam diam, semper in erat eu, efficitur molestie purus. Sed a elementum mi. Sed interdum mattis risus, sit amet eleifend ligula luctus ut. Sed ullamcorper lorem aliquam, tincidunt lorem et, ultrices est. Suspendisse eleifend dui odio, id volutpat quam iaculis eu. Nunc sit amet scelerisque mauris. Phasellus volutpat mauris ac sem tincidunt, in fringilla arcu ultrices. Phasellus scelerisque eros vel pulvinar gravida. Aenean suscipit felis orci, sed egestas libero dignissim at. Sed commodo malesuada ligula, nec vehicula risus fermentum sed. Integer pretium…"
+      "date": "December 25,2025",
+      "image": "assets/images/blog3.jpg",
+      "content":"Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed pellentesque nibh enim, quis euismod enim lacinia nec. Phasellus quam diam, semper in erat eu, efficitur molestie purus. Sed a elementum mi. Sed interdum mattis risus, sit amet eleifend ligula luctus ut. Sed ullamcorper lorem aliquam, tincidunt lorem et, ultrices est. Suspendisse eleifend dui odio, id volutpat quam iaculis eu…"
     },
     {
       "id": 5,
-      "title": "Quick Party Snacks",
+      "title": "Rigatoni with chicken meatballs",
       "author": "Luicd Themes",
-      "date": "December 8,2025",
-      "image": "assets/images/img5.jpg",
-      "content":"Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed pellentesque nibh enim, quis euismod enim lacinia nec. Phasellus quam diam, semper in erat eu, efficitur molestie purus. Sed a elementum mi. Sed interdum mattis risus, sit amet eleifend ligula luctus ut. Sed ullamcorper lorem aliquam, tincidunt lorem et, ultrices est. Suspendisse eleifend dui odio, id volutpat quam iaculis eu. Nunc sit amet scelerisque mauris. Phasellus volutpat mauris ac sem tincidunt, in fringilla arcu ultrices. Phasellus scelerisque eros vel pulvinar gravida. Aenean suscipit felis orci, sed egestas libero dignissim at. Sed commodo malesuada ligula, nec vehicula risus fermentum sed. Integer pretium…"
+      "date": "December 20,2025",
+      "image": "assets/images/blog4.jpg",
+      "content":"Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed pellentesque nibh enim, quis euismod enim lacinia nec. Phasellus quam diam, semper in erat eu, efficitur molestie purus. Sed a elementum mi. Sed interdum mattis risus, sit amet eleifend ligula luctus ut. Sed ullamcorper lorem aliquam, tincidunt lorem et, ultrices est. Suspendisse eleifend dui odio, id volutpat quam iaculis eu…"
     },
     {
       "id": 6,
-      "title": "Simple Blueberry Muffins",
+      "title": "Quick Party Snacks",
       "author": "Luicd Themes",
-      "date": "December 3,2025",
-      "image": "assets/images/img6.jpg",
-      "content":"Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed pellentesque nibh enim, quis euismod enim lacinia nec. Phasellus quam diam, semper in erat eu, efficitur molestie purus. Sed a elementum mi. Sed interdum mattis risus, sit amet eleifend ligula luctus ut. Sed ullamcorper lorem aliquam, tincidunt lorem et, ultrices est. Suspendisse eleifend dui odio, id volutpat quam iaculis eu. Nunc sit amet scelerisque mauris. Phasellus volutpat mauris ac sem tincidunt, in fringilla arcu ultrices. Phasellus scelerisque eros vel pulvinar gravida. Aenean suscipit felis orci, sed egestas libero dignissim at. Sed commodo malesuada ligula, nec vehicula risus fermentum sed. Integer pretium…"
+      "date": "December 8,2025",
+      "image": "assets/images/blog5.jpg",
+      "content":"Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed pellentesque nibh enim, quis euismod enim lacinia nec. Phasellus quam diam, semper in erat eu, efficitur molestie purus. Sed a elementum mi. Sed interdum mattis risus, sit amet eleifend ligula luctus ut. Sed ullamcorper lorem aliquam, tincidunt lorem et, ultrices est. Suspendisse eleifend dui odio, id volutpat quam iaculis eu…"
     },
     {
       "id": 7,
-      "title": "Vegetarian Lunch",
+      "title": "Simple Blueberry Muffins",
       "author": "Luicd Themes",
-      "date": "December 10,2025",
-      "image": "assets/images/img7.jpg",
-      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed pellentesque nibh enim, quis euismod enim lacinia nec. Phasellus quam diam, semper in erat eu, efficitur molestie purus. Sed a elementum mi. Sed interdum mattis risus, sit amet eleifend ligula luctus ut. Sed ullamcorper lorem aliquam, tincidunt lorem et, ultrices est. Suspendisse eleifend dui odio, id volutpat quam iaculis eu. Nunc sit amet scelerisque mauris. Phasellus volutpat mauris ac sem tincidunt, in fringilla arcu ultrices. Phasellus scelerisque eros vel pulvinar gravida. Aenean suscipit felis orci, sed egestas libero dignissim at. Sed commodo malesuada ligula, nec vehicula risus fermentum sed. Integer pretium…"
+      "date": "December 3,2025",
+      "image": "assets/images/blog6.jpg",
+      "content":"Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed pellentesque nibh enim, quis euismod enim lacinia nec. Phasellus quam diam, semper in erat eu, efficitur molestie purus. Sed a elementum mi. Sed interdum mattis risus, sit amet eleifend ligula luctus ut. Sed ullamcorper lorem aliquam, tincidunt lorem et, ultrices est. Suspendisse eleifend dui odio, id volutpat quam iaculis eu…"
     },
     {
       "id": 8,
-      "title": "Everything Chocolate",
+      "title": "Vegetarian Lunch",
       "author": "Luicd Themes",
-      "date": "December 2,2025",
-      "image": "assets/images/img8.jpg",
-      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed pellentesque nibh enim, quis euismod enim lacinia nec. Phasellus quam diam, semper in erat eu, efficitur molestie purus. Sed a elementum mi. Sed interdum mattis risus, sit amet eleifend ligula luctus ut. Sed ullamcorper lorem aliquam, tincidunt lorem et, ultrices est. Suspendisse eleifend dui odio, id volutpat quam iaculis eu. Nunc sit amet scelerisque mauris. Phasellus volutpat mauris ac sem tincidunt, in fringilla arcu ultrices. Phasellus scelerisque eros vel pulvinar gravida. Aenean suscipit felis orci, sed egestas libero dignissim at. Sed commodo malesuada ligula, nec vehicula risus fermentum sed. Integer pretium…"
+      "date": "December 10,2025",
+      "image": "assets/images/blog7.jpg",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed pellentesque nibh enim, quis euismod enim lacinia nec. Phasellus quam diam, semper in erat eu, efficitur molestie purus. Sed a elementum mi. Sed interdum mattis risus, sit amet eleifend ligula luctus ut. Sed ullamcorper lorem aliquam, tincidunt lorem et, ultrices est. Suspendisse eleifend dui odio, id volutpat quam iaculis eu…"
     },
     {
       "id": 9,
+      "title": "Everything Chocolate",
+      "author": "Luicd Themes",
+      "date": "December 2,2025",
+      "image": "assets/images/blog8.jpg",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed pellentesque nibh enim, quis euismod enim lacinia nec. Phasellus quam diam, semper in erat eu, efficitur molestie purus. Sed a elementum mi. Sed interdum mattis risus, sit amet eleifend ligula luctus ut. Sed ullamcorper lorem aliquam, tincidunt lorem et, ultrices est. Suspendisse eleifend dui odio, id volutpat quam iaculis eu…"
+    },
+    {
+      "id": 10,
       "title": "Delicious Dessert Ideas",
       "author": "Luicd Themes",
       "date": "December 2,2025",
-      "image": "assets/images/img9.jpg",
-      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed pellentesque nibh enim, quis euismod enim lacinia nec. Phasellus quam diam, semper in erat eu, efficitur molestie purus. Sed a elementum mi. Sed interdum mattis risus, sit amet eleifend ligula luctus ut. Sed ullamcorper lorem aliquam, tincidunt lorem et, ultrices est. Suspendisse eleifend dui odio, id volutpat quam iaculis eu. Nunc sit amet scelerisque mauris. Phasellus volutpat mauris ac sem tincidunt, in fringilla arcu ultrices. Phasellus scelerisque eros vel pulvinar gravida. Aenean suscipit felis orci, sed egestas libero dignissim at. Sed commodo malesuada ligula, nec vehicula risus fermentum sed. Integer pretium…"
+      "image": "assets/images/blog9.jpg",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed pellentesque nibh enim, quis euismod enim lacinia nec. Phasellus quam diam, semper in erat eu, efficitur molestie purus. Sed a elementum mi. Sed interdum mattis risus, sit amet eleifend ligula luctus ut. Sed ullamcorper lorem aliquam, tincidunt lorem et, ultrices est. Suspendisse eleifend dui odio, id volutpat quam iaculis eu…"
     }
   ]
 }

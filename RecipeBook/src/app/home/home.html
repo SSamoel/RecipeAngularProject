@@ -21,7 +21,7 @@
   <div class="filters-section pt-3">
     <div class="container">
       <div class="row">
-        <div class="col-12 col-md-4 mb-4">
+        <div class="col-md-4 mb-4">
           <div class="dropdown">
             <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" type="button"
               data-bs-toggle="dropdown">
@@ -51,9 +51,8 @@
           </div>
         </div>
       </div>
-      <div class="row pt-4">
-        <div class="col-12 col-md-4 mb-3"
-          *ngFor="let recipe of selectedTag || selectedMealType ? filteredRecipes : recipes">
+      <div class="row pt-4 g-5">
+        <div class="col-12 col-md-4" *ngFor="let recipe of selectedTag || selectedMealType ? filteredRecipes : recipes">
           <div class="card h-100 shadow-sm">
             <img [src]="recipe.image" class="card-img" [alt]="recipe.name">
             <div class="card-body d-flex flex-column">
@@ -68,6 +67,9 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="mt-4 text-center">
+        <button class="btn text-uppercase w-25" type="button" routerLink="/recipes">view all recipes</button>
       </div>
     </div>
   </div>
@@ -86,28 +88,24 @@
               <button class="btn w-25 text-uppercase mt-4" type="button">Continue Reading</button>
             </div>
           </div>
-          <div class="card mt-5 border-0 border-bottom"
-            *ngFor="let blog of blogs.slice(1) let isLast = last"
-            [class.border-bottom]="!isLast">
-            <div class="row align-items-start">
-              <div class="col-12 col-md-6 col-lg-4">
-                <div class="image-wrapper">
-                  <img [src]="blog.image" alt={{blog.title}} class="pb-4 rounded">
-                </div>
-              </div>
-              <div class="col-12 col-md-6 col-lg-8">
-                <div class="card-body pt-0">
-                  <h5 class="card-title">{{blog.title}}</h5>
-                  <span>{{blog.date}} / {{blog.author}}</span>
-                  <p class="card-text pt-4">{{blog.content}}</p>
-                  <button class="btn w-25 text-uppercase mt-4 " type="button">Continue Reading</button>
-                </div>
-              </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-6" *ngFor="let blog of blogs.slice(1) let isLast = last">
+          <div class="card mt-5 border-0 border-bottom" [class.border-bottom]="!isLast">
+            <div class="image-wrapper">
+              <img [src]="blog.image" alt={{blog.title}} class="pb-4 rounded">
+            </div>
+            <div class="card-body pt-0">
+              <h5 class="card-title">{{blog.title}}</h5>
+              <span>{{blog.date}} / {{blog.author}}</span>
+              <p class="card-text pt-4">{{blog.content}}</p>
+              <button class="btn w-50 text-uppercase mt-4 " type="button">Continue Reading</button>
             </div>
           </div>
-          <div class="mt-4">
-            <button class="btn text-uppercase w-25" type="button" routerLink="/blogs">view all blogs</button>
-          </div>
+        </div>
+        <div class="mt-4 text-center">
+          <button class="btn text-uppercase w-25" type="button" routerLink="/blogs">view all blogs</button>
         </div>
       </div>
     </div>
@@ -118,15 +116,13 @@
         <br>
         Follow us on social media for daily recipe inspiration.
       </p>
-       <div class="social-icons mt-3 mb-4 d-flex justify-content-center flex-wrap">
+      <div class="social-icons mt-3 mb-4 d-flex justify-content-center flex-wrap">
         <a href="#"><i class="bi bi-facebook"></i></a>
         <a href="#"><i class="bi bi-instagram"></i></a>
         <a href="#"><i class="bi bi-twitter-x"></i></a>
         <a href="#"><i class="bi bi-google"></i></a>
       </div>
     </div>
-    <div class="footer d-flex justify-content-center align-items-center pt-5 ">
-      <p>© 2025 Recipe. All rights reserved. For inquiries, contact us at <a>info@recipe.com</a></p>
-    </div>
+    <app-footer></app-footer>
   </div>
 </div>

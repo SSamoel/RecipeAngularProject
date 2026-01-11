@@ -3,12 +3,14 @@ import { CommonModule } from '@angular/common';
 import { Header } from './header/header';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { Footer } from './footer/footer';
 
 
 
 @NgModule({
   declarations: [
-    Header
+    Header,
+    Footer
   ],
   imports: [
     CommonModule,
@@ -16,7 +18,8 @@ import { FormsModule } from '@angular/forms';
     FormsModule
   ],
   exports: [
-    Header
+    Header,
+    Footer
   ]
 })
 export class CoreModule { }

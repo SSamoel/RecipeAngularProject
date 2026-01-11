@@ -14,13 +14,13 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  margin: 0;
 }
 
 .paragraph {
-  background-color: #ff9900;
-  opacity: 0.75;
-  width: 60%;
-  padding: 15px;
+  background-color: rgba(255, 153, 0, 0.75);
+  padding: 10px 30px;
+  border-radius: 15px;
   box-sizing: border-box;
 }
 
@@ -154,25 +154,6 @@ h1 {
 .social-icons a:hover {
   color: #ff9900;
   transform: translateY(-5px) scale(1.1);
-}
-
-/*footer*/
-
-.footer {
-  background-color: #f9f9f9;
-  padding: 25px 10px;
-  font-size: 0.9rem;
-  color: #666;
-}
-
-.footer a {
-  color: #ff9900;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.footer a:hover {
-  text-decoration: underline;
 }
 
 /* button style */
