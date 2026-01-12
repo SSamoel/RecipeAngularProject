@@ -10,6 +10,8 @@ import { Home } from './home/home';
 import { authInterceptorService } from './core/interceptors/auth-interceptor-service';
 import { Blogs } from './blogs/blogs';
 import { Contact } from './contact/contact';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,13 @@ import { Contact } from './contact/contact';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      positionClass: 'toast-top-center',
+      timeOut: 5000,
+      progressBar: true,
+      closeButton: true
+    })
 ],
   providers: [
     {provide:HTTP_INTERCEPTORS , useClass:authInterceptorService , multi:true}

@@ -7,13 +7,13 @@
       <h1 class="fw-semibold">Welcome Back</h1>
       <p>Sign in to your account</p>
     </div>
-    <form (ngSubmit)="onSubmit()">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <div class="form-floating custom-float mb-4">
-        <input type="text" name="username" [(ngModel)]="username" class="form-control no-bg no-border" id="username" placeholder="Username">
+        <input type="text" name="username" formControlName="username" class="form-control no-bg no-border" id="username" placeholder="Username">
         <label for="username">Username</label>
       </div>
-      <div class="form-floating custom-float position-relative mb-4">
-        <input type="password" name="password" [(ngModel)]="password" class="form-control no-bg no-border" id="password" placeholder="Password">
+      <div class="form-floating custom-float mb-4">
+        <input type="password" name="password" formControlName="password" class="form-control no-bg no-border" id="password" placeholder="Password">
         <label for="password">Password</label>
       </div>
       <button class="btn text-center w-100"type="submit">SIGN IN</button>

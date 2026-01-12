@@ -5,6 +5,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RecipesDashboardList } from './components/recipes-dashboard-list/recipes-dashboard-list';
 import { AddNewRecipe } from './components/add-new-recipe/add-new-recipe';
 import { EditRecipe } from './components/edit-recipe/edit-recipe';
+import { MatPaginator } from "@angular/material/paginator";
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { EditRecipe } from './components/edit-recipe/edit-recipe';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    RecipesDashboardRoutingModule
+    RecipesDashboardRoutingModule,
+    MatPaginator
   ]
 })
 export class RecipesDashboardModule { }
