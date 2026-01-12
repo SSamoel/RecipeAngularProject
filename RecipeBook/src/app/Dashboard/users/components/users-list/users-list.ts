@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { UsersServices } from '../../services/users-services';
 import { Router } from '@angular/router';
 import { User } from '../../../../core/models/user.model';
+import { PageEvent } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-users-list',
@@ -11,23 +12,31 @@ import { User } from '../../../../core/models/user.model';
 })
 export class UsersList {
   users: User[] = [];
-  limit = 5;
-  skip = 0;
-  total = 0;
+  totalUsers = 0;
+  pageSize = 10;
+  currentPage = 1;
+
 
   constructor(private userServices: UsersServices, private router: Router) { }
 
   ngOnInit() {
-    this.loadUsers();
+    this.loadUsers(this.pageSize , 0)
   }
 
-  loadUsers() {
-    this.userServices.getAllUsers(this.limit, this.skip).subscribe((data) => {
-      this.users = [...this.users, ...data.users];
-      this.total = data.total;
-      this.skip += this.limit;
+  onMatPageChange(event : PageEvent){
+    this.pageSize = event.pageSize;
+    this.currentPage = event.pageIndex + 1;
+    const skip = (this.currentPage - 1 ) * this.pageSize;
+    this.loadUsers(this.pageSize , skip);
+  }
+
+  loadUsers(limit:number , skip:number) {
+    this.userServices.getAllUsers(limit,skip).subscribe((res) => {
+      this.users = res.users ;
+      this.totalUsers = res.total;
     })
   }
+
   editUser(id: number) {
     this.router.navigate(['/dashboard/users/edit', id]);
   }

@@ -6,6 +6,7 @@ import { UsersList } from './components/users-list/users-list';
 import { AddUser } from './components/add-user/add-user';
 import { EditUser } from './components/edit-user/edit-user';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatPaginator } from "@angular/material/paginator";
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     RouterModule,
     ReactiveFormsModule,
-    UsersRoutingModule
-  ]
+    UsersRoutingModule,
+    MatPaginator
+]
 })
 export class UsersModule { }

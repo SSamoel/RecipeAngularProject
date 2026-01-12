@@ -4,6 +4,7 @@ import { Dashboard } from './dashboard-layout/dashboard';
 import { DashboardRoutingModule } from './dashboard-routing-module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Sidebar } from './sidebar/sidebar';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 @NgModule({
@@ -16,7 +17,7 @@ import { Sidebar } from './sidebar/sidebar';
     CommonModule,
     ReactiveFormsModule,
     DashboardRoutingModule,
-
+    MatPaginatorModule,
   ]
 })
 export class DashboardModule { }

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Authentication } from '../../../core/services/authentication-service';
+import { ToastrService } from 'ngx-toastr';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -9,18 +11,38 @@ import { Authentication } from '../../../core/services/authentication-service';
   styleUrl: './login.css'
 })
 export class Login {
-  username: string = '';
-  password: string = '';
+  loginForm: FormGroup;
 
-  constructor(private router: Router, private authService: Authentication) { }
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private authService: Authentication,
+    private toastr: ToastrService,
+  ) {
+    this.loginForm = this.fb.group({
+      username: ['', Validators.required],
+      password: ['', Validators.required]
+    });
+  }
 
   onSubmit() {
-    this.authService.login({
-      username: this.username,
-      password: this.password
-    }).subscribe({
-      next: () => {
+    if (this.loginForm.invalid) {
+      this.toastr.error('Please fill all fields', 'Validation Error');
+      return;
+    }
+    const { username, password } = this.loginForm.value;
+    this.authService.login({ username, password }).subscribe({
+      next: (res) => {
+        localStorage.setItem('token', res.token);
+        this.toastr.success('Login successful');
         this.router.navigate(['/dashboard/']);
+      },
+      error: (err) => {
+        if (err.status === 401 || err.status === 400) {
+          this.toastr.error('Username or password is incorrect', 'Login Failed');
+        } else {
+          this.toastr.error('Something went wrong', 'Error');
+        }
       }
     })
   }

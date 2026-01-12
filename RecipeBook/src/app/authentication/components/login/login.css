@@ -23,7 +23,7 @@
 
 .no-border:focus {
   box-shadow: none !important;
-  border-bottom-color: #01265d !important;
+  border-bottom-color: #ff8a00 !important;
 }
 .custom-float .form-control {
   width: 100%;

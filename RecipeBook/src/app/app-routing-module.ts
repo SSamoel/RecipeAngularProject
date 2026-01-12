@@ -4,6 +4,7 @@ import { Home } from './home/home';
 import { authGuard } from './core/guards/auth-guard';
 import { Blogs } from './blogs/blogs';
 import { Contact } from './contact/contact';
+import { LoginGuard } from './core/guards/login-guard';
 
 
 const routes: Routes = [
@@ -25,6 +26,7 @@ const routes: Routes = [
   },
   {
     path: 'auth',
+    canActivate: [LoginGuard],
     loadChildren: () =>
       import('./authentication/authentication-module').then(m => m.AuthenticationModule)
   },
