@@ -37,7 +37,7 @@ A modern Angular Recipes Application that allows users to browse recipes and blo
 
 | Home | Dashboard | Login Form |
 |------|-----------|------------|
-| ![](./screenshots/home.jpg) | ![](./screenshots/dashboard.jpg) | ![](./screenshots/login.jpg) |
+| ![](./screenshots/home.jpg) | ![]([./screenshots/dashboard.jpg](https://github.com/SSamoel/RecipeAngularProject/blob/main/RecipeBook/screenshots/dashboard.jpg)) | ![](./screenshots/login.jpg) |
 
 ## 🚀 How to Run
 
