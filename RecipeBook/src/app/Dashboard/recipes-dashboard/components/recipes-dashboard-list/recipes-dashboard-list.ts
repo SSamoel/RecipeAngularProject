@@ -4,6 +4,8 @@ import { Recipe } from '../../../../core/models/recipe.model';
 import { RecipesDashboardServices } from '../../services/recipes-dashboard-services';
 import { RecipesSercices } from '../../../../recipes/services/recipes-sercices';
 import { PageEvent } from '@angular/material/paginator';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmDialog } from '../../../../shared/components/confirm-dialog/confirm-dialog';
 
 @Component({
   selector: 'app-recipes-dashboard-list',
@@ -20,7 +22,8 @@ export class RecipesDashboardList {
   constructor(
     private recipeServices: RecipesSercices,
     private recipesDashboardService: RecipesDashboardServices,
-    private router: Router
+    private router: Router,
+    private dialog: MatDialog
   ) { }
 
   ngOnInit() {
@@ -50,12 +53,26 @@ export class RecipesDashboardList {
   }
 
   deleteRecipe(id: number) {
-    this.recipesDashboardService.deleteRecipe(id).subscribe({
-      next: res => {
-        this.recipes = this.recipes.filter(r => r.id !== id);
-      },
-      error: err => {
-        console.error('Delete Recipe failed ', err);
+    const dialogRef = this.dialog.open(ConfirmDialog, {
+      width: '350px',
+      data: {
+        title: 'Confirm Delete',
+        message: 'Are you sure you want to delete this recipe?'
+      }
+    });
+    dialogRef.afterClosed().subscribe(res => {
+      if (res) {
+        this.recipesDashboardService.deleteRecipe(id).subscribe({
+          next: res => {
+            this.recipes = this.recipes.filter(r => r.id !== id);
+            const skip = (this.currentPage -1) * this.pageSize;
+            this.getRecipces(this.pageSize,skip);
+          },
+          error: err => {
+            console.error('Delete Recipe failed ', err);
+
+          }
+        })
       }
     })
   }
