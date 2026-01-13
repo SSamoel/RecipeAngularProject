@@ -35,9 +35,10 @@ A modern Angular Recipes Application that allows users to browse recipes and blo
 
 ## 📸 Screenshots
 
-| Home | Dashboard | Login Form |
-|------|-----------|------------|
-| ![](./screenshots/home.jpg) | ![](./screenshots/dashboard.jpg) | ![](./screenshots/login.jpg) |
+| Home | Dashboard | Login |
+|------|-----------|-------|
+| <img src="./RecipeBook/screenshots/home.jpg" width="300"> | <img src="./RecipeBook/screenshots/dashboard.jpg" width="300"> | <img src="./RecipeBook/screenshots/login.jpg" width="300"> |
+
 
 ## 🚀 How to Run
 
