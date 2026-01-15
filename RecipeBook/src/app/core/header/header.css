@@ -14,6 +14,7 @@
   margin: 0 !important;
 }
 
+
 .navbar-left,
 .navbar-center,
 .navbar-right {
@@ -85,7 +86,6 @@
   padding: 2px;
 }
 
-
 .custom-navbar.scrolled .search-input-wrapper input {
   background: transparent;
   border: none;
@@ -136,5 +136,41 @@
   }
   .nav-link {
     margin: 5px 0;
+  }
+
+  @media (max-width: 576px) {
+    .custom-navbar .container-fluid {
+      flex-wrap: nowrap;
+    }
+
+    .navbar-left img.logo {
+      height: 40px;
+    }
+    .navbar-center {
+      display: none;
+    }
+    .navbar-right {
+      order: 2;
+    }
+    .navbar-toggler {
+      padding: 4px 8px;
+    }
+
+    .navbar-collapse {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      top: 70px;
+      left: 0;
+      width: 100%;
+      padding-top: 15px;
+    }
+
+    .navbar-nav {
+      text-align: center;
+    }
+
+
+
   }
 }

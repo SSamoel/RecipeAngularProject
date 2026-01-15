@@ -52,7 +52,8 @@
         </div>
       </div>
       <div class="row pt-4 g-5">
-        <div class="col-12 col-md-4" *ngFor="let recipe of selectedTag || selectedMealType ? filteredRecipes : recipes">
+        <div class="col-12 col-sm-6 col-md-4"
+          *ngFor="let recipe of selectedTag || selectedMealType ? filteredRecipes : recipes">
           <div class="card h-100 shadow-sm">
             <img [src]="recipe.image" class="card-img" [alt]="recipe.name">
             <div class="card-body d-flex flex-column">
@@ -69,60 +70,65 @@
         </div>
       </div>
       <div class="mt-4 text-center">
-        <button class="btn text-uppercase w-25" type="button" routerLink="/recipes">view all recipes</button>
+        <button class="btn text-uppercase px-5" type="button" routerLink="/recipes">view all recipes</button>
       </div>
     </div>
   </div>
   <div class="section-divider"></div>
-  <div class="blogs">
-    <div class="container">
-      <div class="row">
-        <h1 class="text-center pb-5">Blogs</h1>
-        <div class="col-12">
-          <div class="card border-0 border-bottom" *ngIf="MainBlog">
-            <img [src]="MainBlog.image" class="card-img-top">
-            <div class="card-body text-center">
-              <h5 class="card-title">{{MainBlog.title}}</h5>
-              <span>{{MainBlog.date}} / {{MainBlog.author}}</span>
-              <p class="pt-4">{{MainBlog.content}}</p>
-              <button class="btn w-25 text-uppercase mt-4" type="button">Continue Reading</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12 col-md-6" *ngFor="let blog of blogs.slice(1) let isLast = last">
-          <div class="card mt-5 border-0 border-bottom" [class.border-bottom]="!isLast">
-            <div class="image-wrapper">
-              <img [src]="blog.image" alt={{blog.title}} class="pb-4 rounded">
-            </div>
-            <div class="card-body pt-0">
-              <h5 class="card-title">{{blog.title}}</h5>
-              <span>{{blog.date}} / {{blog.author}}</span>
-              <p class="card-text pt-4">{{blog.content}}</p>
-              <button class="btn w-50 text-uppercase mt-4 " type="button">Continue Reading</button>
-            </div>
-          </div>
-        </div>
-        <div class="mt-4 text-center">
-          <button class="btn text-uppercase w-25" type="button" routerLink="/blogs">view all blogs</button>
-        </div>
+  <!-- blogs section -->
+  <div class="blogs container px-3 px-md-5">
+    <h1 class="text-center pb-5">Blogs</h1>
+    <!-- main Blog -->
+    <div class="main-blog" *ngIf="MainBlog">
+      <img class="main-blog-image" [src]="MainBlog.image" [alt]="MainBlog.title">
+      <div class="main-blog-overlay"></div>
+      <div class="main-blog-content">
+        <span class="blog-meta">{{MainBlog.date}} / {{MainBlog.author}}</span>
+        <h2 class="main-blog-title">{{MainBlog.title}}</h2>
+        <p class="main-blog-text">{{MainBlog.content}}</p>
+        <button class="main-blog-btn" type="button">Continue Reading</button>
       </div>
     </div>
-    <div class="contact d-flex flex-column justify-content-center align-items-center text-center pt-5">
-      <p>
-        <strong>Join our community of food lovers and start your culinary journey today!
-        </strong>
-        <br>
-        Follow us on social media for daily recipe inspiration.
-      </p>
-      <div class="social-icons mt-3 mb-4 d-flex justify-content-center flex-wrap">
-        <a href="#"><i class="bi bi-facebook"></i></a>
-        <a href="#"><i class="bi bi-instagram"></i></a>
-        <a href="#"><i class="bi bi-twitter-x"></i></a>
-        <a href="#"><i class="bi bi-google"></i></a>
+    <!-- blog Grid -->
+    <div class="row mt-5">
+      <div class="col-12 col-md-6 mb-4" *ngFor="let blog of blogs.slice(1)">
+        <article class="blog-card">
+          <div class="blog-image">
+            <img [src]="blog.image" [alt]="blog.title">
+          </div>
+          <div class="blog-body">
+            <span class="blog-meta">{{ blog.date }} / {{ blog.author }}</span>
+            <h3 class="blog-title">{{ blog.title }}</h3>
+            <p class="blog-content">{{ blog.content }}</p>
+            <a class="blog-link" routerLink="/blogs/{{blog.id}}">
+              Read Article →
+            </a>
+          </div>
+        </article>
       </div>
     </div>
-    <app-footer></app-footer>
+
+    <!-- View All Button -->
+    <div class="mt-4 text-center">
+      <button class="btn action-button text-uppercase" type="button" routerLink="/blogs">
+        View All Blogs
+      </button>
+    </div>
   </div>
+  <!-- Contact Section-->
+  <div class="contact d-flex flex-column justify-content-center align-items-center text-center pt-5">
+    <p>
+      <strong>Join our community of food lovers and start your culinary journey today!
+      </strong>
+      <br>
+      Follow us on social media for daily recipe inspiration.
+    </p>
+    <div class="social-icons mt-3 mb-4 d-flex justify-content-center flex-wrap">
+      <a href="#"><i class="bi bi-facebook"></i></a>
+      <a href="#"><i class="bi bi-instagram"></i></a>
+      <a href="#"><i class="bi bi-twitter-x"></i></a>
+      <a href="#"><i class="bi bi-google"></i></a>
+    </div>
+  </div>
+  <app-footer></app-footer>
 </div>
